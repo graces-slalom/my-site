@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6f0">
+  <meta name="description" content="Grace is a strategic, people-first Chief of Staff who brings clarity to complexity and helps teams turn shared goals into action.">
+  <title>Grace — Chief of Staff</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f8f6f0;
+      --ink: #24241f;
+      --muted: #77766e;
+      --line: #dedbd1;
+      --blue: #485de0;
+      --orange: #f17b4a;
+      --green: #a8b59b;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+
+    .page-shell {
+      width: min(1440px, 100%);
+      margin: 0 auto;
+      padding: 0 7.2%;
+    }
+
+    .topbar {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      text-decoration: none;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      letter-spacing: -.07em;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.2rem, 3.2vw, 3rem);
+      font-size: .78rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+
+    .nav a:hover, .text-link:hover { color: var(--blue); }
+
+    .availability {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .04em;
+    }
+
+    .availability::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #8b9e70;
+      content: "";
+    }
+
+    .hero {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.13fr) minmax(270px, .87fr);
+      align-items: center;
+      gap: 4vw;
+      padding: 5.5rem 0 6rem;
+    }
+
+    .eyebrow {
+      margin: 0 0 1.5rem;
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(4.1rem, 9vw, 8.6rem);
+      font-weight: 400;
+      letter-spacing: -.085em;
+      line-height: .91;
+    }
+
+    h1 span {
+      color: var(--blue);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-copy {
+      max-width: 380px;
+      margin: 2rem 0 0;
+      color: #5f5e57;
+      font-size: clamp(1rem, 1.4vw, 1.16rem);
+      line-height: 1.75;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding-bottom: .35rem;
+      border-bottom: 1px solid currentColor;
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color .2s ease;
+    }
+
+    .hero-art {
+      position: relative;
+      width: min(100%, 390px);
+      aspect-ratio: 1 / 1.04;
+      justify-self: end;
+      overflow: hidden;
+      background: #e8e5dc;
+    }
+
+    .art-circle {
+      position: absolute;
+      width: 72%;
+      aspect-ratio: 1;
+      top: 12%;
+      left: 14%;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .art-oval {
+      position: absolute;
+      width: 49%;
+      height: 72%;
+      top: 19%;
+      left: 28%;
+      border-radius: 50%;
+      background: var(--blue);
+      transform: rotate(34deg);
+    }
+
+    .art-cutout {
+      position: absolute;
+      width: 26%;
+      aspect-ratio: 1;
+      right: 13%;
+      bottom: 12%;
+      border: 1px solid rgba(36, 36, 31, .7);
+      border-radius: 50%;
+    }
+
+    .art-caption {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      color: var(--ink);
+      font-family: var(--serif);
+      font-size: .8rem;
+      font-style: italic;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.3rem, 4.2vw, 3.8rem);
+      font-weight: 400;
+      letter-spacing: -.055em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .78rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .work {
+      padding: 1rem 0 7.5rem;
+      scroll-margin-top: 2rem;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 4rem;
+    }
+
+    .approach-card {
+      min-height: 190px;
+      padding: 1.5rem 0 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .approach-card:nth-child(1) .approach-number,
+    .approach-card:nth-child(4) .approach-number { color: var(--blue); }
+
+    .approach-card:nth-child(2) .approach-number { color: #bd6843; }
+    .approach-card:nth-child(3) .approach-number { color: #718264; }
+
+    .approach-number {
+      display: block;
+      margin-bottom: 1.1rem;
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .approach-card h3 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: 1.7rem;
+      font-weight: 400;
+      letter-spacing: -.04em;
+    }
+
+    .approach-card p {
+      max-width: 420px;
+      margin: .65rem 0 0;
+      color: #5f5e57;
+      font-size: .95rem;
+      line-height: 1.65;
+    }
+
+    .about {
+      display: grid;
+      grid-template-columns: .65fr 1.35fr;
+      gap: 5vw;
+      padding: 5.5rem 0 6rem;
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 2rem;
+    }
+
+    .about h2 {
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.4rem, 4vw, 3.7rem);
+      font-weight: 400;
+      letter-spacing: -.06em;
+    }
+
+    .about-copy {
+      max-width: 680px;
+      color: #5f5e57;
+      font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+      line-height: 1.7;
+    }
+
+    .about-copy p { margin: 0 0 1.2rem; }
+
+    .contact {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 4rem 0 4.5rem;
+      background: var(--blue);
+      color: white;
+      scroll-margin-top: 0;
+    }
+
+    .contact-wrap {
+      background: var(--blue);
+    }
+
+    .contact .eyebrow { color: rgba(255, 255, 255, .7); }
+
+    .contact h2 {
+      max-width: 700px;
+      margin: 0;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6vw, 6rem);
+      font-weight: 400;
+      letter-spacing: -.07em;
+      line-height: .98;
+    }
+
+    .contact .text-link {
+      flex: 0 0 auto;
+      margin-bottom: .4rem;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.5rem 0;
+      color: var(--muted);
+      font-size: .72rem;
+    }
+
+    .footer p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .page-shell { padding-right: 6%; padding-left: 6%; }
+      .topbar { min-height: 76px; }
+      .nav { gap: 1rem; font-size: .68rem; }
+      .availability { display: none; }
+      .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        padding: 5rem 0;
+      }
+      .hero-art { width: min(82%, 390px); justify-self: center; }
+      .approach-grid { column-gap: 2rem; }
+      .about { grid-template-columns: 1fr; gap: 1.2rem; padding: 4rem 0; }
+      .contact { align-items: start; flex-direction: column; padding: 3.5rem 0; }
+    }
+
+    @media (max-width: 520px) {
+      .nav { gap: .85rem; }
+      .nav a { letter-spacing: .03em; }
+      .section-heading { align-items: start; flex-direction: column; }
+      .approach-grid { grid-template-columns: 1fr; }
+      .approach-card { min-height: 0; }
+      .footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="topbar">
+      <a class="wordmark" href="#" aria-label="Grace, home">grace.</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#work">Approach</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <span class="availability">Chief of Staff · Strategy &amp; Operations</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="intro-title">
+        <div>
+          <p class="eyebrow">Strategic partner · People-first leader</p>
+          <h1 id="intro-title">Clarity for<br>the work that <span>matters.</span></h1>
+          <p class="hero-copy">Hi, I’m Grace — a Chief of Staff who brings vision and execution together, helping people move through complexity toward shared goals.</p>
+          <a class="text-link" href="#work">How I create momentum <span aria-hidden="true">↘</span></a>
+        </div>
+        <div class="hero-art" role="img" aria-label="Abstract composition of warm orange and blue shapes representing connected ideas">
+          <span class="art-circle"></span>
+          <span class="art-oval"></span>
+          <span class="art-cutout"></span>
+          <span class="art-caption">People, purpose &amp; progress</span>
+        </div>
+      </section>
+
+      <section class="work" id="work" aria-labelledby="work-title">
+        <div class="section-heading">
+          <h2 id="work-title">How I create momentum</h2>
+          <p>Strategy, operations &amp; people</p>
+        </div>
+        <div class="approach-grid">
+          <article class="approach-card">
+            <span class="approach-number">01</span>
+            <h3>Bring clarity to complexity</h3>
+            <p>Make the important questions visible, connect the dots, and give teams a clearer path forward.</p>
+          </article>
+          <article class="approach-card">
+            <span class="approach-number">02</span>
+            <h3>Turn vision into action</h3>
+            <p>Translate shared priorities into focused cross-functional work that moves transformation forward.</p>
+          </article>
+          <article class="approach-card">
+            <span class="approach-number">03</span>
+            <h3>Build trust across teams</h3>
+            <p>Invest in deep partnerships, stay curious, and create alignment through honest conversation.</p>
+          </article>
+          <article class="approach-card">
+            <span class="approach-number">04</span>
+            <h3>Help people do their best work</h3>
+            <p>Lead with empathy and intention so people feel seen, heard, and empowered to contribute.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="about" id="about" aria-labelledby="about-title">
+        <h2 id="about-title">How I<br>lead</h2>
+        <div class="about-copy">
+          <p>I’m a strategic and people-first Chief of Staff with a track record of leading cross-functional initiatives that drive transformation, scale operations, and elevate team performance.</p>
+          <p>My leadership is grounded in trust, curiosity, and action. I build deep partnerships, ask questions that unlock outcomes, and bring authenticity and empathy to the work of moving teams forward.</p>
+          <a class="text-link" href="#contact">Let’s start a conversation <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="contact-wrap">
+    <section class="contact page-shell" id="contact" aria-labelledby="contact-title">
+      <div>
+        <p class="eyebrow">Good work starts with trust.</p>
+        <h2 id="contact-title">Let’s move<br>something forward.</h2>
+      </div>
+      <a class="text-link" href="mailto:hello@grace.design">Get in touch <span aria-hidden="true">↗</span></a>
+    </section>
+  </div>
+
+  <footer class="footer page-shell">
+    <p>© 2026 Grace. Made with care.</p>
+    <p>Chief of Staff · Strategy, operations &amp; people</p>
+  </footer>
+</body>
+</html>
