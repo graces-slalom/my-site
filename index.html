@@ -3,19 +3,20 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f6f0">
+  <meta name="theme-color" content="#E6D8CB">
   <meta name="description" content="Grace is a strategic, people-first Chief of Staff who brings clarity to complexity and helps teams turn shared goals into action.">
   <title>Grace — Chief of Staff</title>
   <style>
     :root {
       color-scheme: light;
-      --paper: #f8f6f0;
-      --ink: #24241f;
-      --muted: #77766e;
-      --line: #dedbd1;
-      --blue: #485de0;
-      --orange: #f17b4a;
-      --green: #a8b59b;
+      --paper: #E6D8CB;
+      --ink: #2F3559;
+      --muted: #9A5071;
+      --line: #E394A7;
+      --plum: #9A5071;
+      --rose: #E394A7;
+      --blush: #F1BBBB;
+      --cream: #E6D8CB;
       --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
       --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
     }
@@ -69,7 +70,7 @@
       transition: color .2s ease;
     }
 
-    .nav a:hover, .text-link:hover { color: var(--blue); }
+    .nav a:hover, .text-link:hover { color: var(--plum); }
 
     .availability {
       display: inline-flex;
@@ -84,7 +85,7 @@
       width: 7px;
       height: 7px;
       border-radius: 50%;
-      background: #8b9e70;
+      background: var(--plum);
       content: "";
     }
 
@@ -116,7 +117,7 @@
     }
 
     h1 span {
-      color: var(--blue);
+      color: var(--plum);
       font-style: italic;
       font-weight: 400;
     }
@@ -124,7 +125,7 @@
     .hero-copy {
       max-width: 380px;
       margin: 2rem 0 0;
-      color: #5f5e57;
+      color: var(--ink);
       font-size: clamp(1rem, 1.4vw, 1.16rem);
       line-height: 1.75;
     }
@@ -147,7 +148,7 @@
       aspect-ratio: 1 / 1.04;
       justify-self: end;
       overflow: hidden;
-      background: #e8e5dc;
+      background: var(--blush);
     }
 
     .hero-side {
@@ -164,7 +165,7 @@
       width: min(100%, 390px);
       padding: 1.15rem 1.3rem;
       border: 1px solid var(--line);
-      background: #f1eee5;
+      background: var(--blush);
     }
 
     .weather-label {
@@ -178,7 +179,7 @@
     .weather-status {
       grid-column: 1;
       margin: 0;
-      color: #5f5e57;
+      color: var(--ink);
       font-size: .85rem;
       line-height: 1.45;
     }
@@ -212,7 +213,7 @@
       border: 0;
       border-bottom: 1px solid currentColor;
       background: transparent;
-      color: var(--blue);
+      color: var(--plum);
       cursor: pointer;
       font: inherit;
       font-size: .72rem;
@@ -227,7 +228,7 @@
       top: 12%;
       left: 14%;
       border-radius: 50%;
-      background: var(--orange);
+      background: var(--rose);
     }
 
     .art-oval {
@@ -237,7 +238,7 @@
       top: 19%;
       left: 28%;
       border-radius: 50%;
-      background: var(--blue);
+      background: var(--plum);
       transform: rotate(34deg);
     }
 
@@ -247,7 +248,7 @@
       aspect-ratio: 1;
       right: 13%;
       bottom: 12%;
-      border: 1px solid rgba(36, 36, 31, .7);
+      border: 1px solid rgba(47, 53, 89, .7);
       border-radius: 50%;
     }
 
@@ -300,15 +301,13 @@
 
     .approach-card {
       min-height: 190px;
-      padding: 1.5rem 0 2rem;
-      border-top: 1px solid var(--line);
+      padding: 1.5rem;
+      background: var(--blush);
     }
 
-    .approach-card:nth-child(1) .approach-number,
-    .approach-card:nth-child(4) .approach-number { color: var(--blue); }
-
-    .approach-card:nth-child(2) .approach-number { color: #bd6843; }
-    .approach-card:nth-child(3) .approach-number { color: #718264; }
+    .approach-card:nth-child(2) { background: var(--rose); }
+    .approach-card:nth-child(3) { background: var(--plum); color: var(--cream); }
+    .approach-card:nth-child(4) { background: var(--ink); color: var(--cream); }
 
     .approach-number {
       display: block;
@@ -329,7 +328,7 @@
     .approach-card p {
       max-width: 420px;
       margin: .65rem 0 0;
-      color: #5f5e57;
+      color: inherit;
       font-size: .95rem;
       line-height: 1.65;
     }
@@ -353,7 +352,7 @@
 
     .about-copy {
       max-width: 680px;
-      color: #5f5e57;
+      color: var(--ink);
       font-size: clamp(1.05rem, 1.8vw, 1.45rem);
       line-height: 1.7;
     }
@@ -366,16 +365,17 @@
       justify-content: space-between;
       gap: 2rem;
       padding: 4rem 0 4.5rem;
-      background: var(--blue);
-      color: white;
+      background: var(--plum);
+      color: var(--cream);
       scroll-margin-top: 0;
     }
 
     .contact-wrap {
-      background: var(--blue);
+      background: var(--plum);
     }
 
-    .contact .eyebrow { color: rgba(255, 255, 255, .7); }
+    .contact .eyebrow { color: rgba(230, 216, 203, .8); }
+    .contact .text-link:hover { color: var(--blush); }
 
     .contact h2 {
       max-width: 700px;
@@ -456,7 +456,7 @@
           <a class="text-link" href="#work">How I create momentum <span aria-hidden="true">↘</span></a>
         </div>
         <div class="hero-side">
-          <div class="hero-art" role="img" aria-label="Abstract composition of warm orange and blue shapes representing connected ideas">
+          <div class="hero-art" role="img" aria-label="Abstract composition of rose and navy shapes representing connected ideas">
             <span class="art-circle"></span>
             <span class="art-oval"></span>
             <span class="art-cutout"></span>
