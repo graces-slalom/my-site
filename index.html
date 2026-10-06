@@ -12,7 +12,7 @@
       --paper: #E6D8CB;
       --ink: #2F3559;
       --muted: #9A5071;
-      --line: #E394A7;
+      --line: rgba(47, 53, 89, .2);
       --plum: #9A5071;
       --rose: #E394A7;
       --blush: #F1BBBB;
@@ -148,7 +148,7 @@
       aspect-ratio: 1 / 1.04;
       justify-self: end;
       overflow: hidden;
-      background: var(--blush);
+      background: var(--cream);
     }
 
     .hero-side {
@@ -165,7 +165,8 @@
       width: min(100%, 390px);
       padding: 1.15rem 1.3rem;
       border: 1px solid var(--line);
-      background: var(--blush);
+      border-top: 2px solid var(--plum);
+      background: var(--cream);
     }
 
     .weather-label {
@@ -228,7 +229,7 @@
       top: 12%;
       left: 14%;
       border-radius: 50%;
-      background: var(--rose);
+      background: var(--plum);
     }
 
     .art-oval {
@@ -238,7 +239,7 @@
       top: 19%;
       left: 28%;
       border-radius: 50%;
-      background: var(--plum);
+      background: var(--ink);
       transform: rotate(34deg);
     }
 
@@ -248,7 +249,7 @@
       aspect-ratio: 1;
       right: 13%;
       bottom: 12%;
-      border: 1px solid rgba(47, 53, 89, .7);
+      border: 1px solid var(--rose);
       border-radius: 50%;
     }
 
@@ -302,12 +303,23 @@
     .approach-card {
       min-height: 190px;
       padding: 1.5rem;
-      background: var(--blush);
+      border-top: 2px solid var(--plum);
+      background: var(--cream);
     }
 
-    .approach-card:nth-child(2) { background: var(--rose); }
-    .approach-card:nth-child(3) { background: var(--plum); color: var(--cream); }
-    .approach-card:nth-child(4) { background: var(--ink); color: var(--cream); }
+    .approach-card:nth-child(2) {
+      border-color: var(--rose);
+      background: var(--ink);
+      color: var(--cream);
+    }
+
+    .approach-card:nth-child(3) { border-color: var(--plum); }
+
+    .approach-card:nth-child(4) {
+      border-color: var(--plum);
+      background: var(--plum);
+      color: var(--cream);
+    }
 
     .approach-number {
       display: block;
@@ -365,16 +377,16 @@
       justify-content: space-between;
       gap: 2rem;
       padding: 4rem 0 4.5rem;
-      background: var(--plum);
+      background: var(--ink);
       color: var(--cream);
       scroll-margin-top: 0;
     }
 
     .contact-wrap {
-      background: var(--plum);
+      background: var(--ink);
     }
 
-    .contact .eyebrow { color: rgba(230, 216, 203, .8); }
+    .contact .eyebrow { color: var(--blush); }
     .contact .text-link:hover { color: var(--blush); }
 
     .contact h2 {
