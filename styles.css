@@ -298,20 +298,6 @@
       background: var(--cream);
     }
 
-    .approach-card:nth-child(2) {
-      border-color: var(--rose);
-      background: var(--ink);
-      color: var(--cream);
-    }
-
-    .approach-card:nth-child(3) { border-color: var(--plum); }
-
-    .approach-card:nth-child(4) {
-      border-color: var(--plum);
-      background: var(--plum);
-      color: var(--cream);
-    }
-
     .approach-number {
       display: block;
       margin-bottom: 1.1rem;
